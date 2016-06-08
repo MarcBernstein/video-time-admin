@@ -9,7 +9,8 @@
     <th align="center">&nbsp;&nbsp;&nbsp;Reason&nbsp;&nbsp;&nbsp;</th>
     <th align="center">&nbsp;&nbsp;&nbsp;From&nbsp;&nbsp;&nbsp;</th>
     <th colspan="3"></th>
-    <th colspan="2"></th>
+    <th colspan="3"></th>
+    <th colspan="3"></th>
   </tr>
  
   <% @messages.each do |message| %>
@@ -21,6 +22,9 @@
       <td align="center"><%= link_to 'Show', message_path(message) %></td>
       <td align="center"><%= link_to 'Destroy', message_path(message),
               method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+      <td align="center"><%= link_to '(  Copy  )', messages_copy_path(message.id),
+              method: :copy,
               data: { confirm: 'Are you sure?' } %></td>
     </tr>
   <% end %>
