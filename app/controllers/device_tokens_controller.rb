@@ -1,0 +1,2 @@
+class DeviceTokensController < ApplicationController
+end
